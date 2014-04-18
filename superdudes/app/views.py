@@ -16,7 +16,7 @@ def logout(request):
 def home(request):
     """Home view, displays login mechanism"""
     if request.user.is_authenticated():
-        return redirect('done')
+        return redirect('app')
     return render_to_response('home.html', {
         'plus_id': getattr(settings, 'SOCIAL_AUTH_GOOGLE_PLUS_KEY', None)
     }, RequestContext(request))
@@ -27,6 +27,16 @@ def done(request):
     """Login complete view, displays user data"""
     scope = ' '.join(GooglePlusAuth.DEFAULT_SCOPE)
     return render_to_response('done.html', {
+        'user': request.user,
+        'plus_id': getattr(settings, 'SOCIAL_AUTH_GOOGLE_PLUS_KEY', None),
+        'plus_scope': scope
+    }, RequestContext(request))
+
+@login_required
+def app(request):
+    """Login complete run single page app."""
+    scope = ' '.join(GooglePlusAuth.DEFAULT_SCOPE)
+    return render_to_response('app.html', {
         'user': request.user,
         'plus_id': getattr(settings, 'SOCIAL_AUTH_GOOGLE_PLUS_KEY', None),
         'plus_scope': scope

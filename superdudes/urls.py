@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^login/$', 'superdudes.app.views.home'),
     url(r'^logout/$', 'superdudes.app.views.logout'),
     url(r'^done/$', 'superdudes.app.views.done', name='done'),
+    url(r'^app/$', 'superdudes.app.views.app', name='app'),
     url(r'^email/$', 'superdudes.app.views.require_email', name='require_email'),
     url(r'', include('social.apps.django_app.urls', namespace='social'))
 )
