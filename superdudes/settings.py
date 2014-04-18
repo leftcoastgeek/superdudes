@@ -231,6 +231,10 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {'locale': 'ru_RU'}
 #Twitter
 SOCIAL_AUTH_TWITTER_KEY = 'YTXjU0a94RRHYiTZogVA96gbD'
 SOCIAL_AUTH_TWITTER_SECRET = 'Ne5nbl3rqKSUEJ8LnEZHcnIdzbSCMUQsnW2kmRzpSO6pR9yLFA'
+
+#GOOGLE
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '17366187183-nr0sasvg903ks0pbevo4ia48frod3e2n.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '0nuSsS2RfsdNtfzCOdaPIZbI'
 try:
     from superdudes.local_settings import *
 except ImportError:
